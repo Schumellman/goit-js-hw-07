@@ -13,17 +13,8 @@ function createMarkup(arr) {
 createMarkup(galleryItems);
 
 listBox.insertAdjacentHTML('beforeend', createMarkup(galleryItems));
-
-listBox.addEventListener('click', onClickOnImg);
-
-function onClickOnImg(evt) {
-    evt.preventDefault();
-    if (evt.target === evt.currentTarget) {
-        return;
-    }
-    const lightbox = new SimpleLightbox('.gallery a', {
+ new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
         captionPosition: 'bottom',
         captionDelay: 250
     })
-}
